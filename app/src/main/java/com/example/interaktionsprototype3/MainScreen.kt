@@ -1,6 +1,7 @@
 package com.example.interaktionsprototype3
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
@@ -27,9 +29,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 
+
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter") //slet måske
 @Composable
-fun MainScreen(mainViewModel: MainViewModel) {
+fun MainScreen(mainViewModel: MainViewModel, context: Context) {
     //create new variable
     val navController = rememberNavController()
     val searchWidgetState by mainViewModel.searchWidgetState
@@ -51,7 +54,8 @@ fun MainScreen(mainViewModel: MainViewModel) {
                 },
                 onSearchTriggered = {
                     mainViewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
-                }
+                },
+                context = context // Pass the context to MainAppBar
             )
         },
         bottomBar = {BottomBar(navController = navController)}
@@ -60,6 +64,7 @@ fun MainScreen(mainViewModel: MainViewModel) {
     }
 }
 
+
 @Composable
 fun MainAppBar(
     searchWidgetState: SearchWidgetState,
@@ -67,7 +72,9 @@ fun MainAppBar(
     onTextChange: (String) -> Unit,
     onCloseClicked: () -> Unit,
     onSearchClicked: (String) -> Unit,
-    onSearchTriggered: () -> Unit
+    onSearchTriggered: () -> Unit,
+//ny linje
+context: Context
 ) {
     when (searchWidgetState) {
         SearchWidgetState.CLOSED -> {
@@ -80,7 +87,15 @@ fun MainAppBar(
                 text = searchTextState,
                 onTextChange = onTextChange,
                 onCloseClicked = onCloseClicked,
-                onSearchClicked = onSearchClicked
+               //gammel linje: onSearchClicked = onSearchClicked
+            //ny linje:
+                onSearchClicked = { query ->
+                    val found = searchInXmlFile(context,"dummydrugs", query)
+                    if (found) {
+                        // Match found, perform necessary action
+                        Log.d("Search", "Match found: $query")
+                    }
+                }
             )
         }
     }

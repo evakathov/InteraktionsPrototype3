@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <drugs>
+        <drug>
+            <name>Drug A</name>
+            <interaction>Interaction A</interaction>
+        </drug>
+        <drug>
+            <name>Drug B</name>
+            <interaction>Interaction B</interaction>
+        </drug>
+        <drug>
+            <name>Drug C</name>
+            <interaction>Interaction C</interaction>
+        </drug>
+        <drug>
+            <name>Drug D</name>
+            <interaction>Interaction D</interaction>
+        </drug>
+    </drugs>
+</PreferenceScreen>

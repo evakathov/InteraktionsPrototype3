@@ -1,5 +1,6 @@
 package com.example.interaktionsprototype3
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,11 +19,13 @@ class MainActivity : ComponentActivity() {
 
     private val mainViewModel: MainViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             InteraktionsPrototype3Theme {
-                MainScreen(mainViewModel = mainViewModel)
+                val context = this
+                MainScreen(mainViewModel = mainViewModel, context = context)
                 // A surface container using the 'background' color from the theme
                 /*Surface(
                     modifier = Modifier.fillMaxSize(),
