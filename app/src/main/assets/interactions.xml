@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interactions>
+    <interaction>
+        <drug1>
+            <name>Paracetamol</name>
+            <dosage>500mg</dosage>
+        </drug1>
+        <drug2>
+            <name>Ibuprofen</name>
+            <dosage>200mg</dosage>
+        </drug2>
+        <description>Samtidig brug af Paracetamol og Ibuprofen kan øge risikoen for leverskade.</description>
+    </interaction>
+    <interaction>
+        <drug1>
+            <name>Warfarin</name>
+            <dosage>5mg</dosage>
+        </drug1>
+        <drug2>
+            <name>Aspirin</name>
+            <dosage>81mg</dosage>
+        </drug2>
+        <description>Samtidig brug af Warfarin og Aspirin kan øge risikoen for blødning.</description>
+    </interaction>
+</interactions>

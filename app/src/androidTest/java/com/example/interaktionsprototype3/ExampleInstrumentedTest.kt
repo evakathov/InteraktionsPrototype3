@@ -1,5 +1,7 @@
 package com.example.interaktionsprototype3
 
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -7,6 +9,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import java.io.InputStream
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -14,11 +17,26 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
+
 class ExampleInstrumentedTest {
-    @Test
+  /*  @Test
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.example.interaktionsprototype3", appContext.packageName)
-    }
+    }   */
+  @Test
+  fun testInteractionsFileAccess() {
+      val context = ApplicationProvider.getApplicationContext<Context>()
+      val inputStream: InputStream? = context.assets.open("interactions.xml")
+
+      // Test, om filen er åbnet korrekt
+      assertEquals(true, inputStream != null)
+
+      // Gør noget med filen eller dens indhold her
+      // f.eks. læs og analyser XML-dataene
+
+      // Luk filstrømmen efter brug
+      inputStream?.close()
+  }
 }

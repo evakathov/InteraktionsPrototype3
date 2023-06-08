@@ -11,6 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.interaktionsprototype3.ui.theme.InteraktionsPrototype3Theme
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
+import com.example.interaktionsprototype3.data.ViewModelInteractions
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,3 +45,15 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }*/
+
+class MyActivity : AppCompatActivity() {
+    private lateinit var viewModel: ViewModelInteractions
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Initialiser ViewModel (f.eks. ved hjælp af ViewModelProvider)
+
+        val xmlData = viewModel.getInteractionsXmlData()
+        // Brug XML-dataene efter behov
+    }
+}
