@@ -24,7 +24,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-
+//denne composable funktion anvendes ikke længere, da vi har fjernet topbaren med søgefeltet
+// dette grundet,atsøgefeltet skulle placeres midt på skærmen i stedet
 @Composable
 fun MainAppBar(
     searchWidgetState: SearchWidgetState,
