@@ -53,24 +53,12 @@ fun MainAppBar(
 
 @Composable
 fun DefaultAppBar(onSearchClicked: () -> Unit) {
-    Surface(
-        modifier = Modifier.width(365.dp)
-            .height(56.dp),
-        elevation = AppBarDefaults.TopAppBarElevation,
-        color = MaterialTheme.colors.primary,
-        shape = RoundedCornerShape(
-            topStart = 8.dp,
-            topEnd = 8.dp,
-            bottomEnd = 8.dp,
-            bottomStart = 8.dp
-        )
-
-    ) {
-
+    CustomSurface{
         TopAppBar(
             title = {
                 Text(
-                    text = "Skriv præparat.."
+                    text = "Skriv præparat...",
+                    color = Color.Black
                 )
             },
             actions = {
@@ -80,7 +68,7 @@ fun DefaultAppBar(onSearchClicked: () -> Unit) {
                     Icon(
                         imageVector = Icons.Filled.Search,
                         contentDescription = "Search Icon",
-                        tint = Color.White
+                        tint = Color.Black
                     )
                 }
             }
@@ -97,18 +85,7 @@ fun SearchAppBar(
     onCloseClicked: () -> Unit,
     onSearchClicked: (String) -> Unit,
 ) {
-    Surface(
-        modifier = Modifier.width(365.dp)
-            .height(56.dp),
-            elevation = AppBarDefaults.TopAppBarElevation,
-            color = MaterialTheme.colors.primary,
-            shape = RoundedCornerShape(
-                topStart = 8.dp,
-                topEnd = 8.dp,
-                bottomEnd = 8.dp,
-                bottomStart = 8.dp
-            )
-    ){
+    CustomSurface{
         TextField(modifier = Modifier
             .fillMaxWidth(),
             value = text,
@@ -119,8 +96,8 @@ fun SearchAppBar(
                 Text(
                     modifier = Modifier
                         .alpha(ContentAlpha.medium),
-                    text = "Search here...",
-                    color = Color.White
+                    text = "Skriv Præparat...",
+                    color = Color.Black
                 )
             },
             textStyle = TextStyle(
@@ -136,7 +113,7 @@ fun SearchAppBar(
                     Icon(
                         imageVector = Icons.Default.Search,
                         contentDescription = "Search Icon",
-                        tint = Color.White
+                        tint = Color.Black
                     )
                 }
             },
@@ -153,7 +130,7 @@ fun SearchAppBar(
                     Icon(
                         imageVector = Icons.Default.Close,
                         contentDescription = "Close Icon",
-                        tint = Color.White
+                        tint = Color.Black
                     )
                 }
             },
@@ -167,7 +144,27 @@ fun SearchAppBar(
             ),
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.Transparent,
-                cursorColor = Color.White.copy(alpha = ContentAlpha.medium)
+                cursorColor = Color.Black.copy(alpha = ContentAlpha.medium)
             ))
+    }
+}
+
+
+@Composable
+fun CustomSurface(content: @Composable () -> Unit) {
+    Surface(
+        modifier = Modifier
+            .width(365.dp)
+            .height(56.dp),
+        elevation = AppBarDefaults.TopAppBarElevation,
+        color = MaterialTheme.colors.primary,
+        shape = RoundedCornerShape(
+            topStart = 8.dp,
+            topEnd = 8.dp,
+            bottomEnd = 8.dp,
+            bottomStart = 8.dp
+        )
+    ) {
+        content()
     }
 }
