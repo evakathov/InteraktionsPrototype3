@@ -13,7 +13,7 @@ sealed class BottomBarScreen(
 
 ) {
     // We define 3 different objects for the different screens
-    //Each object represents the screens i our bottomnavgationbar
+    //Each object represents the screens in our bottomnavgationbar
     object Home: BottomBarScreen(route= "home",
     title = "Præparat",
     icon = Icons.Default.Home)
