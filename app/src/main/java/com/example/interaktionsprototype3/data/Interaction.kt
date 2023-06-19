@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
 data class Interaction(
     //autoGenerate sikrer at id er unikt  for at hvert item
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val id: Int = 0, //evt skal id slettes, fordi man søger alligevel efter stof-navn
     val stofA: String,
     val stofB: String,
     val dokumentationsgrad: String,

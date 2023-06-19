@@ -5,12 +5,15 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.interaktionsprototype3.screens.HomeScreen
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter") //slet måske
 @Composable
@@ -77,3 +80,10 @@ fun RowScope.AddItem(
         }
     )
 }
+
+@Composable
+@Preview
+fun MainScreenPreview() {
+    MainScreen()
+}
+

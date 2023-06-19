@@ -11,21 +11,14 @@ import kotlinx.coroutines.flow.Flow
 //DAO klasse
 @Dao
 interface InteractionDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE) //OnConflictStrategy sættes til ignorer, fordi der ikke kan opstå kodekonflikter, da der kun kan indsættes data ét sted i app'en
-    suspend fun insert(interaction: Interaction) //indsæt metode der tager en instans af Entitets klassen Interaction som parameter
+    //metode til at søge efter ét præparat i databasen og dets interaktioner med andre præparater
+    @Query("SELECT * from interaction WHERE stofA = :stofA")
+    fun getDrug(stofA: String): Flow<Interaction> //With Flow as the return type, you receive notification whenever the data in the database changes.
 
-    @Update
-    suspend fun update(interaction: Interaction) //suspend gør at Room flytter arbejdet "arbejdet" til en background thread
+    //metode til at søge efter interaktioner mellem to præparater, stofA og stofB
+    @Query("SELECT * from interaction WHERE stofA = :stofA AND stofB = :stofB")
+    fun getInteraction(stofA:String, stofB:String): Flow<List<Interaction>>
 
-    @Delete
-    suspend fun delete(interaction: Interaction)
-
-    @Query("SELECT * from interaction WHERE id = :id")
-    fun getItem(id: Int): Flow<Interaction> //With Flow as the return type, you receive notification whenever the data in the database changes.
-
-    @Query("SELECT * from interaction ORDER BY id ASC")
-    fun getAllItems(): Flow<List<Interaction>> //Room keeps this Flow updated for you, which means you only need to explicitly get the data once.
-    //denne metode giver en notifikation, når data i databasen ændres
 
 }
 

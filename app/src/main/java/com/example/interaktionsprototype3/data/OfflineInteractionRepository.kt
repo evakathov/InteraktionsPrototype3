@@ -3,9 +3,7 @@ package com.example.interaktionsprototype3.data
 import kotlinx.coroutines.flow.Flow
 
 class OfflineInteractionRepository(private val interactionDao: InteractionDao): InteractionRepository {
-    override fun getAllItemsStream(): Flow<List<Interaction>> = interactionDao.getAllItems()
-    override fun getItemStream(id: Int): Flow<Interaction?> = interactionDao.getItem(id)
-    override suspend fun insertItem(item: Interaction) = interactionDao.insert(item)
-    override suspend fun deleteItem(item: Interaction) = interactionDao.delete(item)
-    override suspend fun updateItem(item: Interaction) = interactionDao.update(item)
+    override fun getInteractionStream(stofA: String, stofB: String): Flow<List<Interaction>> = interactionDao.getInteraction(stofA,stofB)
+    override fun getDrugStream(stofA: String): Flow<Interaction?> = interactionDao.getDrug(stofA)
+    //evt. skal det bare være den samme metode, der kan tage ét eller flere parametre
 }

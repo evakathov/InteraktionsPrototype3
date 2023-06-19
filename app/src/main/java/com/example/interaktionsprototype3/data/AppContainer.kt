@@ -8,13 +8,12 @@ import android.content.Context
 interface AppContainer {
     val interactionRepository: InteractionRepository
 }
-
 /**
  * [AppContainer] implementation that provides instance of [OfflineInteractionRepository]
  */
 class AppDataContainer(private val context: Context) : AppContainer {
     /**
-     * Implementation for [ItemsRepository]
+     * Implementation for [InteractionRepository]
      */
     override val interactionRepository: InteractionRepository by lazy {
         OfflineInteractionRepository(InteractionDatabase.getDatabase(context).interactionDao())
