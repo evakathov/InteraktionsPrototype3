@@ -1,11 +1,8 @@
 package com.example.interaktionsprototype3.data
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 //DAO klasse
@@ -19,6 +16,9 @@ interface InteractionDao {
     @Query("SELECT * from interaction WHERE stofA = :stofA AND stofB = :stofB")
     fun getInteraction(stofA:String, stofB:String): Flow<List<Interaction>>
 
+    //metode til at indsætte det "parsed" JSON data til databasen
+    @Insert
+    fun insertJsonData(interaction: Interaction)
 
 }
 

@@ -1,5 +1,7 @@
 package com.example.interaktionsprototype3
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
@@ -19,6 +21,9 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.WindowCompat
+import androidx.room.Room
+import com.example.interaktionsprototype3.data.InteractionDao
+import com.example.interaktionsprototype3.data.InteractionDatabase
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.File
@@ -44,6 +49,7 @@ class MainActivity : ComponentActivity() {
                     MainScreen()
                 }
             }
+
         }
 
 
@@ -65,6 +71,7 @@ class MainActivity : ComponentActivity() {
 
 
     }
+
 }
 
 

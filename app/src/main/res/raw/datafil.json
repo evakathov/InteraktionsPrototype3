@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "stofA": "aluminium",
+    "stofB": "ciprofloxacin",
+    "dokumentationsgrad": "Veldokumen tere",
+    "kliniskBetydning": "udtalt",
+    "rekommandation": "Kombinationen  kan anvendes med forskudt indtagelses tidspunkt.",
+    "forholdsregler": "Du bør tage ciprofloxacin  mindst 2 timer før aluminium. ",
+    "problemer": "Præparaterne bør tages forskudt, fordi ciprofloxacins  virkning kan blive svækket, hvis man på samme tidspunkt  får aluminium "
+  },
+  {
+    "id": 2,
+    "stofA": "calcium",
+    "stofB": "ofloxacin",
+    "dokumentationsgrad": "begrænset dokumentation",
+    "kliniskBetydning": "Kombinationen  kan anvendes med forskudt indtagelses tidspunkt.",
+    "rekommandation": "Du kan godt tage denne kombination, men du skal være opmærksom på  særlige forholdsregler.",
+    "forholdsregler": "Du bør tage ofloxacin mindst 2 timer  før calcium.",
+    "problemer": "Præparaterne bør  tages forskudt, fordi ofloxacins  virkning kan blive  svækket, hvis du  på samme tidspunkt får calcium."
+  },
+  {
+    "id": 3,
+    "stofA": "celecoxib",
+    "stofB": "warfarin",
+    "dokumentationsgrad": "dokumenteret",
+    "kliniskBetydning": "mulig",
+    "rekommandation": "Kombination af NSAID/COX-2 hæmmere og coumariner bør undgås såfremt behandling med simple analgetika som paracetamol er en mulighed. Er kombinationen nødvendig bør forebyggende behandling med en protonpumpehæmmer iværksættes og INR bør monitoreres ved indledning og ophør af kombinationen. Hyppig kontrol af koagulationsfaktorer (INR) ved indledning og afslutning af kombinations behandlingen",
+    "forholdsregler": "Er kombinationen nødvendig, bør forebyggende behandling med en protonpumperhæmmer iværksættes, og INR bør monitoreres ved indledning og ophør af kombinationen.",
+    "problemer": "Kombination af NSAID og coumariner bør undgås såfremt behandling med simple analgetika, som paracetamol, er en mulighed. Coumariner og NSAID påvirker begge blodkoaguleringen men ved forskellige mekanismer."
+  }
+]
