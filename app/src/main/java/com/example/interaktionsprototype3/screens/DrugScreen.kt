@@ -15,15 +15,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.interaktionsprototype3.MainAppBar
-import com.example.interaktionsprototype3.MainViewModel
+import com.example.interaktionsprototype3.DrugViewModel
 import com.example.interaktionsprototype3.SearchWidgetState
 import com.example.interaktionsprototype3.R
-import com.example.interaktionsprototype3.getIDStofByMedicationName
 
 @Composable
-fun HomeScreen(mainViewModel: MainViewModel) {
-    val searchWidgetState by mainViewModel.searchWidgetState
-    val searchTextState by mainViewModel.searchTextState
+fun DrugScreen(drugViewModel: DrugViewModel) {
+    val searchWidgetState by drugViewModel.searchWidgetState
+    val searchTextState by drugViewModel.searchTextState
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -42,19 +41,20 @@ fun HomeScreen(mainViewModel: MainViewModel) {
             searchWidgetState = searchWidgetState,
             searchTextState = searchTextState,
             onTextChange = {
-                mainViewModel.updateSearchTextState(newValue = it)
+                drugViewModel.updateSearchTextState(newValue = it)
             },
             onCloseClicked = {
-                mainViewModel.updateSearchWidgetState(newValue = SearchWidgetState.CLOSED)
+                drugViewModel.updateSearchWidgetState(newValue = SearchWidgetState.CLOSED)
             },
             onSearchClicked = {
                 //call some function
 
                 Log.d("Searched Text", it)
+                //indsæt søg xml her
 
             },
             onSearchTriggered = {
-                mainViewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
+                drugViewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
             }
         )
 
@@ -106,9 +106,9 @@ fun MyImageColumn() {
 
 @Composable
 @Preview
-fun HomeScreenPreview() {
-    val mainViewModel: MainViewModel = viewModel()
-    HomeScreen(mainViewModel = mainViewModel)
+fun DrugScreenPreview() {
+    val drugViewModel: DrugViewModel = viewModel()
+    DrugScreen(drugViewModel = drugViewModel)
 }
 
 

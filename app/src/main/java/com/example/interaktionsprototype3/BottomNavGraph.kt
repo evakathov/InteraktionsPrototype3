@@ -5,21 +5,21 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.interaktionsprototype3.screens.HomeScreen
+import com.example.interaktionsprototype3.screens.DrugScreen
 import com.example.interaktionsprototype3.screens.InfoScreen
 import com.example.interaktionsprototype3.screens.InteractionScreen
 
 
 @Composable
 fun BottomNavGraph(navController: NavHostController) {
-    val mainViewModel: MainViewModel = viewModel()
+    val drugViewModel: DrugViewModel = viewModel()
 
     NavHost(
         navController = navController,
         startDestination = BottomBarScreen.Drug.route
     ) {
         composable(route = BottomBarScreen.Drug.route) {
-            HomeScreen(mainViewModel = mainViewModel)
+            DrugScreen(drugViewModel = drugViewModel)
         }
         composable(route = BottomBarScreen.Interaction.route) {
             InteractionScreen()

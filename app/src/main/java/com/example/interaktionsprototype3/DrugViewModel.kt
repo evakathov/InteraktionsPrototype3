@@ -4,8 +4,8 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-//denne klasse anvendes ikke længere, da vi har fjernet topbaren
-class MainViewModel : ViewModel() {
+
+class DrugViewModel : ViewModel() {
     private val _searchWidgetState: MutableState<SearchWidgetState> =
         mutableStateOf(value = SearchWidgetState.CLOSED)
     val searchWidgetState: State<SearchWidgetState> = _searchWidgetState
@@ -21,6 +21,7 @@ class MainViewModel : ViewModel() {
     fun updateSearchTextState(newValue: String) {
         _searchTextState.value = newValue
     }
+
 
 
 
