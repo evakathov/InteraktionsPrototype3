@@ -22,9 +22,4 @@ class DrugViewModel : ViewModel() {
         _searchTextState.value = newValue
     }
 
-
-
-
-
-
 }
