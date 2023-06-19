@@ -21,4 +21,9 @@ class MainViewModel : ViewModel() {
     fun updateSearchTextState(newValue: String) {
         _searchTextState.value = newValue
     }
+
+
+
+
+
 }

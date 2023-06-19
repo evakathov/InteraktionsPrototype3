@@ -16,10 +16,10 @@ private val DarkColorPalette = darkColors(
 private val LightColorPalette = lightColors(
     background = Surface,
     surface = Surface,
-    //onSurface = Color.Black,
     primary = Purple200,
     primaryVariant = Purple700,
-    secondary = Purple500
+    secondary = Purple500,
+
 
 
 
@@ -52,3 +52,4 @@ fun InteraktionsPrototype3Theme(
         content = content
     )
 }
+

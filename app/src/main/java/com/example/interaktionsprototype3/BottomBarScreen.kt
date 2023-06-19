@@ -1,6 +1,9 @@
 package com.example.interaktionsprototype3
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Search
@@ -14,13 +17,13 @@ sealed class BottomBarScreen(
 ) {
     // We define 3 different objects for the different screens
     //Each object represents the screens in our bottomnavgationbar
-    object Home: BottomBarScreen(route= "home",
+    object Drug: BottomBarScreen(route= "drug",
     title = "Præparat",
-    icon = Icons.Default.Home)
+    icon = Icons.Default.Search)
 
-    object Search: BottomBarScreen(route= "search",
+    object Interaction: BottomBarScreen(route= "interaction",
         title = "Interaktioner",
-        icon = Icons.Default.Search)
+        icon = Icons.Default.AddCircle)
 
     object Info: BottomBarScreen(route= "info",
         title = "Info",

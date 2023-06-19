@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.interaktionsprototype3.screens.HomeScreen
 import com.example.interaktionsprototype3.screens.InfoScreen
-import com.example.interaktionsprototype3.screens.SearchScreen
+import com.example.interaktionsprototype3.screens.InteractionScreen
 
 
 @Composable
@@ -16,13 +16,13 @@ fun BottomNavGraph(navController: NavHostController) {
 
     NavHost(
         navController = navController,
-        startDestination = BottomBarScreen.Home.route
+        startDestination = BottomBarScreen.Drug.route
     ) {
-        composable(route = BottomBarScreen.Home.route) {
+        composable(route = BottomBarScreen.Drug.route) {
             HomeScreen(mainViewModel = mainViewModel)
         }
-        composable(route = BottomBarScreen.Search.route) {
-            SearchScreen()
+        composable(route = BottomBarScreen.Interaction.route) {
+            InteractionScreen()
         }
         composable(route = BottomBarScreen.Info.route) {
             InfoScreen()

@@ -4,3 +4,4 @@ enum class SearchWidgetState {
     OPENED,
     CLOSED
 }
+

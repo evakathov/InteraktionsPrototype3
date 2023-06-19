@@ -22,10 +22,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-//denne composable funktion anvendes ikke længere, da vi har fjernet topbaren med søgefeltet
-// dette grundet,atsøgefeltet skulle placeres midt på skærmen i stedet
+//Denne composable bruges inde i Drug.kt. og skaber vores søgefelt
 @Composable
 fun MainAppBar(
     searchWidgetState: SearchWidgetState,
@@ -69,7 +69,7 @@ fun DefaultAppBar(onSearchClicked: () -> Unit) {
                     Icon(
                         imageVector = Icons.Filled.Search,
                         contentDescription = "Search Icon",
-                        tint = Color.Black
+                        tint = Color.White
                     )
                 }
             }
@@ -114,7 +114,7 @@ fun SearchAppBar(
                     Icon(
                         imageVector = Icons.Default.Search,
                         contentDescription = "Search Icon",
-                        tint = Color.Black
+                        tint = Color.White
                     )
                 }
             },
@@ -131,7 +131,7 @@ fun SearchAppBar(
                     Icon(
                         imageVector = Icons.Default.Close,
                         contentDescription = "Close Icon",
-                        tint = Color.Black
+                        tint = Color.White
                     )
                 }
             },
@@ -145,7 +145,7 @@ fun SearchAppBar(
             ),
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.Transparent,
-                cursorColor = Color.Black.copy(alpha = ContentAlpha.medium)
+                cursorColor = Color.White.copy(alpha = ContentAlpha.medium)
             ))
     }
 }
@@ -157,8 +157,10 @@ fun CustomSurface(content: @Composable () -> Unit) {
         modifier = Modifier
             .width(365.dp)
             .height(56.dp),
-        elevation = AppBarDefaults.TopAppBarElevation,
+        //elevation = AppBarDefaults.TopAppBarElevation,
+        elevation = 16.dp,
         color = MaterialTheme.colors.primary,
+
         shape = RoundedCornerShape(
             topStart = 8.dp,
             topEnd = 8.dp,
@@ -169,3 +171,10 @@ fun CustomSurface(content: @Composable () -> Unit) {
         content()
     }
 }
+/*
+@Preview
+@Composable
+fun  SearchActivityPreview(){
+    ()
+
+}    */
