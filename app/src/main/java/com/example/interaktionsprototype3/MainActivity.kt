@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import com.example.interaktionsprototype3.ui.theme.InteraktionsPrototype3Theme
 
 
-
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,27 +31,35 @@ class MainActivity : ComponentActivity() {
             }
 
         }
+/*
+        //Tester adgang til XML fil
+        val resourceId = resources.getIdentifier("xml_download", "raw", packageName)
+        if (resourceId != 0) {
+            println("XML file found in res/raw directory.")
+        } else {
+            println("XML file not found in res/raw directory.")
+        }
+*/
+/*
+        //Tester søg af præparatnavn i XML fil
+        val resourceId = resources.getIdentifier("xml_download", "raw", packageName)
+        if (resourceId != 0) {
+            val inputStream = resources.openRawResource(resourceId)
 
-        /*
-                val resourceId = resources.getIdentifier("xml_download", "raw", packageName)
-                if (resourceId != 0) {
-                    val inputStream = resources.openRawResource(resourceId)
+            val medicationName = "diflunisal"
 
-                    val medicationName = "diflunisal"
-
-                    val idStof = getIDStofByMedicationName(inputStream, medicationName)
-                    if (idStof != null) {
-                        println("Medication: $medicationName, ID_Stof: $idStof")
-                    } else {
-                        println("Medication not found in XML.")
-                    }
-                } else {
-                    println("XML file not found in res/raw directory.")
-                }
-        */
+            val idStof = getIDStofByMedicationName(inputStream, medicationName)
+            if (idStof != null) {
+                println("Medication: $medicationName, ID_Stof: $idStof")
+            } else {
+                println("Medication not found in XML.")
+            }
+        } else {
+            println("XML file not found in res/raw directory.")
+        }
+ */
 
     }
-
 }
 
 
