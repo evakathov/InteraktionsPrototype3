@@ -43,15 +43,12 @@ fun reachResourceXML(context: Context) {
     }
 }
 
-
-
-
 @Composable
 fun DrugScreen(drugViewModel: DrugViewModel) {
     val searchWidgetState by drugViewModel.searchWidgetState
     val searchTextState by drugViewModel.searchTextState
     val medicationNameState = remember { mutableStateOf("") }
-
+    val isSearchTriggered = remember { mutableStateOf(false) }
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -76,6 +73,7 @@ fun DrugScreen(drugViewModel: DrugViewModel) {
             },
             onSearchClicked = {
                 medicationNameState.value = it
+                isSearchTriggered.value = true
             },
             onSearchTriggered = {
                 drugViewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
@@ -84,7 +82,9 @@ fun DrugScreen(drugViewModel: DrugViewModel) {
 
         Spacer(modifier = Modifier.size(100.dp))
 
-        performXmlSearch(medicationNameState.value)
+        if (isSearchTriggered.value) {
+            performXmlSearch(medicationNameState.value)
+        }
         MyImageColumn()
     }
 }
