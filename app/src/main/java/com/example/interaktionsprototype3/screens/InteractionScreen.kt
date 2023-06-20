@@ -35,9 +35,10 @@ fun InteractionScreen() {
     ) {
         Spacer(modifier = Modifier.size(70.dp))
         Text(
-            text = "Søg på ét præparat",
+            text = "Søg på interaktioner",
             fontSize = MaterialTheme.typography.h4.fontSize,
             fontWeight = FontWeight.Bold,
+
         )
         Spacer(modifier = Modifier.size(170.dp))
         CustomSurface {
